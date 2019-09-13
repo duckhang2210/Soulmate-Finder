@@ -1,0 +1,29 @@
+
+
+html { 
+    background: linear-gradient(to bottom right, #77A1D3, #79CBCA, #E684AE) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: rgb(250, 232, 200);
+    text-align: center;
+    font-size: 150%;
+  }
+#logo {
+    padding-top: 40%;
+}
+
+#startBtn{
+    border-radius: 60%;
+    border-style: none;
+    background: rgb(248, 227, 188);
+    color: #7777aa;
+    cursor: pointer;
+    width: 75px;
+}
+#startBtn p {
+    font-size: 160%;
+}
+
+
