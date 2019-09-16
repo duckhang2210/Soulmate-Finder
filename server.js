@@ -1,9 +1,20 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+
+//.resolve(__dirname, '../app.js'));
+const app = express();
+require('./app/routing/htmlRoutes.js')(app);
+require('./app/routing/apiRoutes.js')(app);
+
 const PORT = process.env.PORT || 3000;
 
-require("./app/routing/htmlRoutes.js")(app);
-app.listen(PORT, () => {
-    console.log(`Listening on ${PORT}`);
-})
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(express.json());
+
+
+app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+});
