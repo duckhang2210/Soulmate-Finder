@@ -1,4 +1,4 @@
-var friends = [{
+var friendsData = [{
     name: "John Torpey",
     photo: "https://static.pexels.com/photos/343717/pexels-photo-343717.jpeg",
     scores: [3, 1, 4, 4, 2, 4, 5, 2, 4, 2]
@@ -29,5 +29,4 @@ var friends = [{
   }];
   
    //export array
-  
-  module.exports = friends;
+   module.exports = friendsData;

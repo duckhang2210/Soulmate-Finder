@@ -1,21 +1,25 @@
-const express = require('express');
-const app = express();
-const path = require('path');
+console.log('HTML Route Connected Successfully');
 
 
-module.exports = (app) => {
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/home.html'));
-});
-
-app.get('/style.css', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/style.css'));
-});
-app.get('/survey.html', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/survey.html'));
-});
-
-};
+// Node Dependencies
+var path = require('path');
 
 
+// Includes Two Routes
+function htmlRoutes(app) {
 
+  // A GET Route to /survey which should display the survey page.
+  app.get('/survey', function (req, res) {
+    res.sendFile(path.join(__dirname + '/../public/survey.html'));
+  });
+
+  // A default USE route that leads to home.html which displays the home page.
+  app.use(function (req, res) {
+    res.sendFile(path.join(__dirname + '/../public/home.html'));
+  });
+
+}
+
+
+// Export for use in main server.js file
+module.exports = htmlRoutes;
